@@ -92,6 +92,7 @@ Courses.init({
 {
     sequelize: database,
     modelName: "Courses",
+    schema: 'school_service',
     timestamps: true
 }
 )

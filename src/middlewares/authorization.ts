@@ -1,10 +1,6 @@
-import express, {Request, Response, NextFunction} from 'express';
-import jwt, {JwtPayload} from 'jsonwebtoken'
-import { token } from 'morgan';
+import { Response, NextFunction} from 'express';
+import {JwtPayload} from 'jsonwebtoken'
 import { verifySignature } from '../utilities/helpers';
-import dotenv from 'dotenv';
-
-dotenv.config()
 
 export const authoriser = async (req: JwtPayload, res: Response, next: NextFunction) => {
     try {
