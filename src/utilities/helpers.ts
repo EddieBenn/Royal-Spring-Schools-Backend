@@ -1,12 +1,10 @@
 import bcrypt from 'bcryptjs';
-import jwt, { JwtPayload } from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 import axios, { AxiosResponse } from 'axios'
-import { Request, Response } from 'express';
 import dotenv from 'dotenv';
 
 dotenv.config()
 
-const APP_SECRET = process.env.APP_SECRET as string
 export const axiosVerifyStudent = async (reg_no:string)=>{
     try {
       const url = `https://database-for-students-and-courses.onrender.com/student/single_student/${reg_no}`;
