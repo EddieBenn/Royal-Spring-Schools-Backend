@@ -7,7 +7,7 @@ dotenv.config()
 
 export const axiosVerifyStudent = async (reg_no:string)=>{
     try {
-      const url = `https://database-for-students-and-courses.onrender.com/student/single_student/${reg_no}`;
+      const url = `https://school-portal-api.onrender.com/student/single_student/${reg_no}`;
       const response = await axios.get(url);
       return response.data;
     } catch (error:any) {
@@ -21,7 +21,7 @@ export const axiosVerifyStudent = async (reg_no:string)=>{
 
   export const axiosgetAllCourses = async (queryParams: { page?: string; limit?: string; search?: string; sort?: string }): Promise<AxiosResponse> => {
     try {
-        const url = `https://database-for-students-and-courses.onrender.com/courses/all_courses`;
+        const url = `https://school-portal-api.onrender.com/courses/all_courses`;
         const search = queryParams.search || '';
 
         const response = await axios.get(url, {
@@ -42,7 +42,7 @@ export const axiosVerifyStudent = async (reg_no:string)=>{
 
   export const axiosgetExternalCourseDetails = async (course_code:string)=>{
     try {
-      const url = `https://database-for-students-and-courses.onrender.com/courses/single_course/${course_code}`;
+      const url = `https://school-portal-api.onrender.com/courses/single_course/${course_code}`;
       const response = await axios.get(url);
       return response.data;
     } catch (error:any) {

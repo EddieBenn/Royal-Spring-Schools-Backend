@@ -14,8 +14,7 @@ export const registerStudent = async (req:Request, res:Response) => {
         const checkStudent = await Students.findOne({where: {reg_no}})
         if(checkStudent) return res.status(400).json({status: `error`, message: `Student ${reg_no} already registered, please login`})
         const confirmStudent = await axiosVerifyStudent(reg_no)
-    
-    if(confirmStudent === 'not found') return res.status(404).json({status: `error`, message: `${reg_no} does not exist, contact the Student Affairs Unit`})
+    if(confirmStudent === 'Student not found') return res.status(404).json({status: `error`, message: `${reg_no} does not exist, contact the Student Affairs Unit`})
         const studentData = confirmStudent.data
 
     let password = passWordGenerator(studentData.lastName)
