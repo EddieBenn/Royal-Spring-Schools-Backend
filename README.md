@@ -1,4 +1,4 @@
-#School Portal - Student Records & Course Management
+##School Portal - Student Records & Course Management
 This project is a comprehensive school portal designed to manage student records efficiently. It allows schools to store, access, and update student information, as well as organize and track courses for each semester.
 
 Key Features:
