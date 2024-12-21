@@ -9,7 +9,7 @@ const {
   PROD_DB_USERNAME,
   PROD_DB_HOST,
   PROD_DB_PASSWORD,
-  PROD_DB_SCHEMA,
+  PROD_DB_SSL
 } = process.env;
 
 export const database = new Sequelize(
@@ -22,8 +22,7 @@ export const database = new Sequelize(
     dialect: "postgres",
     logging: false,
     dialectOptions: {
-      encrypt: true,
-      searchPath: PROD_DB_SCHEMA,
+      ssl: PROD_DB_SSL === 'true' ? { rejectUnauthorized: false } : false,
     },
   }
 );
