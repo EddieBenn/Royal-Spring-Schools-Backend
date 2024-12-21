@@ -56,6 +56,7 @@ Students.init({
 {
     sequelize: database,
     modelName: "Students",
+    tableName: "students",
     timestamps: true
 }
 )
