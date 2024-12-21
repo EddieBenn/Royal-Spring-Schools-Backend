@@ -56,7 +56,6 @@ Students.init({
 {
     sequelize: database,
     modelName: "Students",
-    schema: 'school_service',
     timestamps: true
 }
 )
